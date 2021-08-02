@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.tour.step.StepFragment">
+
+    <data>
+        <variable
+            name="step"
+            type="com.vk59.wegotrip_kt.model.StepTour" />
+    </data>
+        
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/titleStepText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{step.name}"
+            android:textSize="36sp"
+            app:layout_constraintBottom_toTopOf="@+id/guidelineTopPicture"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineTopPicture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.15" />
+
+        <com.vk59.wegotrip_kt.ui.tour.step.NestedScrollableHost
+            android:id="@+id/nestedScrollableHost"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/guidelineBottomPicture"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guidelineTopPicture">
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/viewPagerPictures"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </com.vk59.wegotrip_kt.ui.tour.step.NestedScrollableHost>
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineBottomPicture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.8" />
+
+
+        <TextView
+            android:id="@+id/stepDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{step.description}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/guidelineBottomPicture" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/routes"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.vk59.wegotrip_kt.ui.main.MainFragment"
+        android:label="main_fragment"
+        tools:layout="@layout/main_fragment" >
+        <action
+            android:id="@+id/action_mainFragment_to_tourFragment"
+            app:destination="@id/tourFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/tourFragment"
+        android:name="com.vk59.wegotrip_kt.ui.tour.TourFragment"
+        android:label="tour_fragment"
+        tools:layout="@layout/tour_fragment" >
+        <action
+            android:id="@+id/action_tourFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+</navigation>

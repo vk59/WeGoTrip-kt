@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">WeGoTrip-kt</string>
+    <string name="start_button">Start</string>
+    <string name="step_example">Step 1/5</string>
+</resources>
