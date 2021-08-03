@@ -19,7 +19,7 @@ class PicturesAdapter(private val picturesReferences: ArrayList<String>) : Recyc
         Glide
             .with(holder.itemView)
             .load(picturesReferences[position])
-            .into(holder.itemView.findViewById<ImageView>(R.id.photoItem))
+            .into(holder.itemView.findViewById(R.id.photoItem))
     }
 
     override fun getItemCount(): Int {

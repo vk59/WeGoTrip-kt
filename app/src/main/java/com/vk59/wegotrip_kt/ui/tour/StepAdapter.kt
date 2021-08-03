@@ -1,10 +1,8 @@
 package com.vk59.wegotrip_kt.ui.tour
 
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.MutableLiveData
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.vk59.wegotrip_kt.model.Tour
-import com.vk59.wegotrip_kt.sample.Config
 import com.vk59.wegotrip_kt.ui.tour.step.StepFragment
 
 class StepAdapter(fragment: Fragment, var tour: Tour) : FragmentStateAdapter(fragment) {

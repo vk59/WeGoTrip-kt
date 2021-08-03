@@ -1,12 +1,10 @@
 package com.vk59.wegotrip_kt.ui.tour
 
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ReportFragment
 import androidx.lifecycle.ViewModel
-import com.vk59.wegotrip_kt.Repository
 import com.vk59.wegotrip_kt.model.StepTour
 import com.vk59.wegotrip_kt.model.Tour
-import com.vk59.wegotrip_kt.sample.Config
+import com.vk59.wegotrip_kt.repository.Repository
 
 class TourViewModel : ViewModel() {
     lateinit var tour: Tour
@@ -15,12 +13,13 @@ class TourViewModel : ViewModel() {
         var currentStepNumber = MutableLiveData(0)
     }
 
+    var currentStep: MutableLiveData<StepTour?> = MutableLiveData()
+
     fun getStepsCount() : Int {
         return tour.steps.size
     }
 
     fun createTour() {
-        val steps = Repository.getConfigStepsOfTour()
-        tour = Tour(Repository.getTourName(), steps)
+        tour = Repository.getTour()
     }
 }

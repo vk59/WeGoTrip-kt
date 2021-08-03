@@ -4,12 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.NavHostFragment
 import androidx.viewpager2.widget.ViewPager2
 import com.vk59.wegotrip_kt.R
 import com.vk59.wegotrip_kt.databinding.TourFragmentBinding
+import com.vk59.wegotrip_kt.ui.tour.text_player.TextPlayerFragment
 
 class TourFragment : Fragment() {
     private lateinit var viewModel: TourViewModel
@@ -31,8 +33,18 @@ class TourFragment : Fragment() {
             .bind(inflater.inflate(R.layout.tour_fragment, container, false))
         initViewPagerSteps(tourFragmentBinding.root)
         initButtons()
+        initAudio()
 
         return tourFragmentBinding.root
+    }
+
+    private fun initAudio() {
+        val titleAudio = tourFragmentBinding.bottomLayout.root
+                .findViewById<TextView>(R.id.titleAudio)
+        tourFragmentBinding.bottomLayout.cardViewLayout.setOnClickListener {
+            val textPlayerFragment = TextPlayerFragment(viewModel)
+            textPlayerFragment.show(requireFragmentManager(), "Text player")
+        }
     }
 
     private fun initButtons() {
@@ -53,6 +65,7 @@ class TourFragment : Fragment() {
 
     private fun setOnChangedFragmentFocus() {
         TourViewModel.currentStepNumber.observe(viewLifecycleOwner) {
+            viewModel.currentStep.value = viewModel.tour.steps[it]
             changeStepNumberOnView(it)
         }
     }

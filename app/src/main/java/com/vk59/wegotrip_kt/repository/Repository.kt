@@ -1,6 +1,7 @@
-package com.vk59.wegotrip_kt
+package com.vk59.wegotrip_kt.repository
 
 import com.vk59.wegotrip_kt.model.StepTour
+import com.vk59.wegotrip_kt.model.Tour
 import com.vk59.wegotrip_kt.sample.Config
 
 class Repository {
@@ -20,6 +21,11 @@ class Repository {
 
         fun getTourName() : String {
             return Config.tourName
+        }
+
+        fun getTour() : Tour {
+            val steps = getConfigStepsOfTour()
+            return Tour(getTourName(), steps)
         }
     }
 }

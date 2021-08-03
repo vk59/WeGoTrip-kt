@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import com.vk59.wegotrip_kt.R
 import com.vk59.wegotrip_kt.databinding.StepFragmentBinding
 import com.vk59.wegotrip_kt.model.StepTour
