@@ -2,7 +2,7 @@ package com.vk59.wegotrip_kt.sample
 
 class Config {
     companion object {
-        const val tourName = "Прогулка по зимнему дворцу"
+        const val tourName = "Зимний дворец"
 
         val stepTitles = arrayListOf(
             "Добро пожаловать в Зимний дворец!",

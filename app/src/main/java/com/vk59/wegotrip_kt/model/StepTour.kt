@@ -5,4 +5,4 @@ import java.io.Serializable
 class StepTour(var name: String,
                var description: String,
                var picturesLinks: ArrayList<String>,
-               var audio: Any) : Serializable
+               var audio: Int) : Serializable

@@ -1,5 +1,6 @@
 package com.vk59.wegotrip_kt.repository
 
+import com.vk59.wegotrip_kt.R
 import com.vk59.wegotrip_kt.model.StepTour
 import com.vk59.wegotrip_kt.model.Tour
 import com.vk59.wegotrip_kt.sample.Config
@@ -12,18 +13,24 @@ class Repository {
                 result.add(
                     StepTour(
                         Config.stepTitles[i], Config.stepsDescriptions[i],
-                        Config.pictureReferences[i], Any()
+                        Config.pictureReferences[i],
+                        when (i) {
+                            0 -> R.raw.mozart_symph_41_1
+                            1 -> R.raw.mozart_symph_41_2
+                            2 -> R.raw.mozart_symph_41_4
+                            else -> R.raw.mozart_symph_41_4
+                        }
                     )
                 )
             }
             return result
         }
 
-        fun getTourName() : String {
+        fun getTourName(): String {
             return Config.tourName
         }
 
-        fun getTour() : Tour {
+        fun getTour(): Tour {
             val steps = getConfigStepsOfTour()
             return Tour(getTourName(), steps)
         }
