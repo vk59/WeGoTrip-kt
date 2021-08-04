@@ -18,21 +18,25 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:paddingRight="20dp"
+            android:paddingLeft="20dp">
 
             <ImageView
                 android:id="@+id/moreButton"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:src="@drawable/icon_more" />
+                android:src="@drawable/icon_more"
+                style="@style/BlackButton"/>
 
             <ImageView
                 android:id="@+id/playButton"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:src="@drawable/icon_play" />
+                android:src="@drawable/icon_play"
+                style="@style/BlackButton"/>
 
             <ImageView
                 android:id="@+id/pauseButton"
@@ -40,7 +44,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:visibility="gone"
-                android:src="@drawable/icon_pause"/>
+                android:src="@drawable/icon_pause"
+                style="@style/BlackButton"/>
 
             <TextView
                 android:id="@+id/titleAudio"
@@ -48,14 +53,16 @@
                 android:layout_height="match_parent"
                 android:layout_weight="5"
                 android:gravity="center"
-                android:text="@string/title_plug" />
+                android:text="@string/title_plug"
+                style="@style/TitleAudioTextStyle"/>
 
             <ImageView
                 android:id="@+id/backwardButton"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:src="@drawable/icon_backward_5" />
+                android:src="@drawable/icon_backward_5"
+                style="@style/GreyButton"/>
 
             <TextView
                 android:id="@+id/speedPlayer"
@@ -63,14 +70,16 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="@string/default_speed_1x" />
+                android:text="@string/default_speed_1x"
+                android:textColor="@color/dark_grey"/>
 
             <ImageView
                 android:id="@+id/forwardButton"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:src="@drawable/icon_forward_5" />
+                android:src="@drawable/icon_forward_5"
+                style="@style/GreyButton"/>
 
 
         </LinearLayout>

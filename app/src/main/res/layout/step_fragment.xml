@@ -18,26 +18,30 @@
 
         <TextView
             android:id="@+id/titleStepText"
+            style="@style/TitleTextStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
             android:text="@{step.name}"
-            android:textSize="36sp"
             app:layout_constraintBottom_toTopOf="@+id/guidelineTopPicture"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guidelineTopPicture"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.15" />
+        <!--        <androidx.constraintlayout.widget.Guideline-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:orientation="horizontal"-->
+        <!--            app:layout_constraintGuide_percent="0.1" />-->
+
 
         <com.vk59.wegotrip_kt.ui.step.NestedScrollableHost
             android:id="@+id/nestedScrollableHost"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
             app:layout_constraintBottom_toTopOf="@+id/guidelineBottomPicture"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -46,7 +50,8 @@
             <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/viewPagerPictures"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:background="@color/light_grey"/>
         </com.vk59.wegotrip_kt.ui.step.NestedScrollableHost>
 
         <androidx.constraintlayout.widget.Guideline
@@ -54,18 +59,43 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.6" />
+            app:layout_constraintGuide_percent="0.58" />
 
+        <!--        <androidx.constraintlayout.widget.Barrier-->
+        <!--            android:id="@+id/guidelineBottomPicture"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            app:barrierDirection="bottom"-->
+        <!--            app:constraint_referenced_ids="nestedScrollableHost"-->
+        <!--            tools:layout_editor_absoluteY="27dp" />-->
 
-        <TextView
-            android:id="@+id/stepDescription"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@{step.description}"
+        <ScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/guidelineBottomPicture" />
+            app:layout_constraintTop_toBottomOf="@+id/guidelineBottomPicture">
+
+            <TextView
+                android:id="@+id/stepDescription"
+                style="@style/DescriptionTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+
+                android:text="@{step.description}"
+                />
+        </ScrollView>
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/guidelineTopPicture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="titleStepText"
+            tools:layout_editor_absoluteY="731dp" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

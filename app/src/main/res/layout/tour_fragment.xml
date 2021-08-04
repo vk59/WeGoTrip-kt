@@ -29,8 +29,6 @@
             app:title="Tour" />
     </com.google.android.material.appbar.AppBarLayout>
 
-
-
     <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -40,12 +38,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/step_example"
-                android:textAllCaps="true"
+                android:layout_marginTop="15dp"
                 app:layout_constraintBottom_toTopOf="@+id/guidelineStepFrameTop"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.1"
+                app:layout_constraintHorizontal_bias="0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                style="@style/StepNumberTextStyle" />
 
             <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/viewPagerSteps"
@@ -62,7 +61,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                app:layout_constraintGuide_percent="0.05" />
+                app:layout_constraintGuide_percent="0.1" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guidelineStepFrameBottom"

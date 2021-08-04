@@ -9,7 +9,25 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:src="@drawable/icon_rectangle" />
+
+        <TextView
+            style="@style/TitleTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="Зимний дворец" />
+
+
+        <TextView
+            style="@style/SubtitleTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingBottom="10dp"
+            android:text="Аудио-экскурсия" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/stepsRecycler"

@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.NavHostFragment
 import androidx.viewpager2.widget.ViewPager2
+import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.vk59.wegotrip_kt.R
 import com.vk59.wegotrip_kt.audio.PlayerStatus
@@ -50,6 +51,23 @@ class TourFragment : Fragment() {
         initToolbar()
         initAudio()
         return tourFragmentBinding.root
+    }
+
+    private fun initButtons() {
+        tourFragmentBinding.toolbar.setNavigationOnClickListener {
+            NavHostFragment.findNavController(this)
+                .navigate(R.id.action_tourFragment_to_mainFragment)
+        }
+
+        tourFragmentBinding.toolbar.setOnMenuItemClickListener {
+            launchStepsListFragment()
+            true
+        }
+    }
+
+    private fun launchStepsListFragment() {
+        val stepsListFragment = StepsListFragment(viewModel)
+        stepsListFragment.show(requireFragmentManager(), "Steps list")
     }
 
     private fun initToolbar() {
@@ -156,23 +174,6 @@ class TourFragment : Fragment() {
     private fun launchTextPlayerFragment() {
         val textPlayerFragment = TextPlayerFragment(viewModel)
         textPlayerFragment.show(requireFragmentManager(), "Text player")
-    }
-
-    private fun initButtons() {
-        tourFragmentBinding.toolbar.setNavigationOnClickListener {
-            NavHostFragment.findNavController(this)
-                    .navigate(R.id.action_tourFragment_to_mainFragment)
-        }
-
-        tourFragmentBinding.toolbar.setOnMenuItemClickListener {
-            launchStepsListFragment()
-            true
-        }
-    }
-
-    private fun launchStepsListFragment() {
-        val stepsListFragment = StepsListFragment(viewModel)
-        stepsListFragment.show(requireFragmentManager(), "Steps list")
     }
 
     private fun initViewPagerSteps() {

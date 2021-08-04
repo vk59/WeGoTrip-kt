@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
     <data>
+
         <variable
             name="step"
             type="com.vk59.wegotrip_kt.model.StepTour" />
@@ -14,28 +16,36 @@
             type="Integer" />
     </data>
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/stepLayout"
-        android:layout_width="match_parent"
+    <androidx.cardview.widget.CardView
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="10dp">
+        android:layout_width="match_parent"
+        android:layout_margin="5dp">
 
-
-        <TextView
-            android:id="@+id/stepNumber"
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/stepLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="4"
-            android:text='@{pos.toString() + "/" + tour.steps.size()}' />
+            android:orientation="horizontal"
+            android:padding="10dp">
 
 
-        <TextView
-            android:id="@+id/stepName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@{step.name}" />
+            <TextView
+                android:id="@+id/stepNumber"
+                style="@style/SubtitleTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:text='@{pos.toString() + "/" + tour.steps.size()}' />
 
-    </LinearLayout>
+
+            <TextView
+                android:id="@+id/stepName"
+                style="@style/DescriptionTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@{step.name}" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 </layout>

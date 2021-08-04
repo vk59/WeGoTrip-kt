@@ -16,6 +16,7 @@ import com.vk59.wegotrip_kt.R
 import com.vk59.wegotrip_kt.audio.AudioService
 import com.vk59.wegotrip_kt.audio.PlayerStatus
 import com.vk59.wegotrip_kt.databinding.SheetPlayerDescriptionBinding
+import com.vk59.wegotrip_kt.ui.steps.StepsListFragment
 import com.vk59.wegotrip_kt.ui.tour.TourViewModel
 
 
@@ -130,6 +131,21 @@ class TextPlayerFragment(private val viewModel: TourViewModel) : BottomSheetDial
             binding.playerDescription.text = it!!.description
             binding.sheetPlayerTitle.text = it.name
         }
+        initButtons()
+    }
+
+    private fun initButtons() {
+        binding.hideButton.setOnClickListener { this.onDestroyView() }
+        binding.stepsButton.setOnClickListener {
+            launchStepsListFragment()
+            this.onDestroyView()
+        }
+    }
+
+
+    private fun launchStepsListFragment() {
+        val stepsListFragment = StepsListFragment(viewModel)
+        stepsListFragment.show(requireFragmentManager(), "Steps list")
     }
 
     fun audioView(
