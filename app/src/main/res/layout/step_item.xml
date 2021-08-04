@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="step"
+            type="com.vk59.wegotrip_kt.model.StepTour" />
+
+        <variable
+            name="tour"
+            type="com.vk59.wegotrip_kt.model.Tour" />
+
+        <variable
+            name="pos"
+            type="Integer" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/stepLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+
+        <TextView
+            android:id="@+id/stepNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            android:text='@{pos.toString() + "/" + tour.steps.size()}' />
+
+
+        <TextView
+            android:id="@+id/stepName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@{step.name}" />
+
+    </LinearLayout>
+</layout>

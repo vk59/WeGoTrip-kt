@@ -1,6 +1,5 @@
 package com.vk59.wegotrip_kt.ui.tour
 
-import android.content.Context
 import android.os.Bundle
 import android.os.Handler
 import android.util.Log
@@ -8,17 +7,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.SeekBar
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.NavHostFragment
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.vk59.wegotrip_kt.R
-import com.vk59.wegotrip_kt.audio.AudioService
 import com.vk59.wegotrip_kt.audio.PlayerStatus
 import com.vk59.wegotrip_kt.databinding.TourFragmentBinding
+import com.vk59.wegotrip_kt.ui.steps.StepsListFragment
 import com.vk59.wegotrip_kt.ui.text_player.TextPlayerFragment
 
 class TourFragment : Fragment() {
@@ -168,9 +165,14 @@ class TourFragment : Fragment() {
         }
 
         tourFragmentBinding.toolbar.setOnMenuItemClickListener {
-
+            launchStepsListFragment()
             true
         }
+    }
+
+    private fun launchStepsListFragment() {
+        val stepsListFragment = StepsListFragment(viewModel)
+        stepsListFragment.show(requireFragmentManager(), "Steps list")
     }
 
     private fun initViewPagerSteps() {
