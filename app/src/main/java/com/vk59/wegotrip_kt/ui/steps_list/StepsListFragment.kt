@@ -1,4 +1,4 @@
-package com.vk59.wegotrip_kt.ui.steps
+package com.vk59.wegotrip_kt.ui.steps_list
 
 import android.app.Dialog
 import android.os.Bundle

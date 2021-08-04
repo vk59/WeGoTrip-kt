@@ -16,7 +16,7 @@ import com.vk59.wegotrip_kt.R
 import com.vk59.wegotrip_kt.audio.AudioService
 import com.vk59.wegotrip_kt.audio.PlayerStatus
 import com.vk59.wegotrip_kt.databinding.SheetPlayerDescriptionBinding
-import com.vk59.wegotrip_kt.ui.steps.StepsListFragment
+import com.vk59.wegotrip_kt.ui.steps_list.StepsListFragment
 import com.vk59.wegotrip_kt.ui.tour.TourViewModel
 
 

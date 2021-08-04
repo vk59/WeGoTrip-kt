@@ -1,4 +1,4 @@
-package com.vk59.wegotrip_kt.ui.steps
+package com.vk59.wegotrip_kt.ui.steps_list
 
 import android.util.Log
 import android.view.LayoutInflater
@@ -23,7 +23,6 @@ class RecyclerStepsAdapter(private val tour: Tour) : RecyclerView.Adapter<Recycl
     }
 
     override fun onBindViewHolder(holder: StepsViewHolder, position: Int) {
-        Log.d("BIND VIEW HOLDER", position.toString())
         holder.binding.step = steps[position]
         holder.binding.pos = position + 1
         holder.binding.tour = tour

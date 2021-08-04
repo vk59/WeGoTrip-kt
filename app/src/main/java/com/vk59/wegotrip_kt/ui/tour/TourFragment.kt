@@ -15,7 +15,7 @@ import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.vk59.wegotrip_kt.R
 import com.vk59.wegotrip_kt.audio.PlayerStatus
 import com.vk59.wegotrip_kt.databinding.TourFragmentBinding
-import com.vk59.wegotrip_kt.ui.steps.StepsListFragment
+import com.vk59.wegotrip_kt.ui.steps_list.StepsListFragment
 import com.vk59.wegotrip_kt.ui.text_player.TextPlayerFragment
 
 class TourFragment : Fragment() {
@@ -158,11 +158,6 @@ class TourFragment : Fragment() {
             else -> {
 
             }
-//            PlayerStatus.FINISHED -> {
-//                nextPage()
-//                Log.d("STATUS", viewPagerSteps.currentItem.toString())
-//                TourViewModel.currentStepNumber.value = viewPagerSteps.currentItem
-//            }
         }
     }
 
