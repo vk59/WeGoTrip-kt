@@ -20,7 +20,6 @@ class TourViewModel : ViewModel() {
 
     var currentStep: MutableLiveData<StepTour?> = MutableLiveData()
 
-    private lateinit var runnable: Runnable
 
     companion object {
         var currentStepNumber = MutableLiveData(0)

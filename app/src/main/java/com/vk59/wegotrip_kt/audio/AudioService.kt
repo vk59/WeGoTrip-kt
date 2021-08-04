@@ -34,7 +34,7 @@ object AudioService : Player {
     override fun play() {
         if (player?.isPlaying != true) {
             player?.start()
-            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 player!!.playbackParams = player!!.playbackParams.setSpeed(speeds[currentSpeed])
             }
             status.value = PlayerStatus.PLAYING

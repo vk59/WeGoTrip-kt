@@ -148,12 +148,12 @@ class TextPlayerFragment(private val viewModel: TourViewModel) : BottomSheetDial
         stepsListFragment.show(requireFragmentManager(), "Steps list")
     }
 
-    fun audioView(
+    private fun audioView(
         context: Context,
         seekBar: SeekBar,
         timePassed: TextView,
         timeLeft: TextView,
-        handler: android.os.Handler
+        handler: Handler
     ) {
         seekBar.max = AudioService.getFullDuration()
         runnable = Runnable {

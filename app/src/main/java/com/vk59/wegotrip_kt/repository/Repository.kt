@@ -7,7 +7,7 @@ import com.vk59.wegotrip_kt.sample.Config
 
 class Repository {
     companion object {
-        fun getConfigStepsOfTour(): ArrayList<StepTour> {
+        private fun getConfigStepsOfTour(): ArrayList<StepTour> {
             val result = arrayListOf<StepTour>()
             for (i: Int in 0 until Config.stepTitles.size) {
                 result.add(
@@ -26,7 +26,7 @@ class Repository {
             return result
         }
 
-        fun getTourName(): String {
+        private fun getTourName(): String {
             return Config.tourName
         }
 
